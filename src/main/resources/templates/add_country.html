@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Add Country</title>
+</head>
+<body>
+	<form action="#" th:action="@{'/country/add?lang=' + ${language}}" th:object="${country}"
+		method="post">
+		<p th:if="${language == 1}">
+			अंग्रेजी में नाम लिखें: <input name="nameHindi" type="text" />
+		</p>
+		<p>
+			<input type="submit" value="Submit" />
+		</p>
+	</form>
+</body>
+</html>

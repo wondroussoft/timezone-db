@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Country details</title>
+</head>
+<body>
+	<table border="1">
+		<tr style="font-size: 13">
+			<th>ID</th>
+			<th>Name</th>
+			<th>Area</th>
+			<th>President Name</th>
+			<th>Population</th>
+			<th>Capital</th>
+			<th>Time</th>
+			<th>Date</th>
+
+		</tr>
+		<tr>
+			<td th:text="${country.id}" /></td>
+
+			<td th:if="${language == 1}"><a
+				th:href="@{'/timezone/country/'+ ${country.id} + '?lang=' + ${language}}"
+				th:text="${country.nameEng}"> </a></td>
+
+			<td th:if="${language == 2}"><a
+				th:href="@{'/timezone/country/'+ ${country.id} + '?lang=' + ${language}}"
+				th:text="${country.nameTelugu}"> </a></td>
+
+			<td th:if="${language == 3}"><a
+				th:href="@{'/timezone/country/'+ ${country.id} + '?lang=' + ${language}}"
+				th:text="${country.nameKannnada}"> </a></td>
+
+			<td th:if="${language == 4}"><a
+				th:href="@{'/timezone/country/'+ ${country.id} + '?lang=' + ${language}}"
+				th:text="${country.nameHindi}"> </a></td>
+
+			<td th:if="${language == 5}"><a
+				th:href="@{'/timezone/country/'+ ${country.id} + '?lang=' + ${language}}"
+				th:text="${country.nameTamil}"> </a></td>
+
+			<td th:text="@{${country.area} + ' sq km'}" /></td>
+			<td th:text="${country.presidentNameEng}" /></td>
+			<td th:text="${country.population}" /></td>
+			<td th:text="${country.capital}" /></td>
+			<td th:text="${country.time}" /></td>
+			<td th:text="${country.date}" /></td>
+
+		</tr>
+	</table>
+</body>
+</html>
